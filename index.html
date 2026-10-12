@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tastnest connects people with local service providers for car washing, pet care, gardening and more.">
+    <title>Tasknet | Your skills. Your time. Your earnings.</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="brand" href="index.html" aria-label="tasknet home">
+                <span class="brand-mark">T</span><span>Tasknet</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <a class="active" href="index.html">Home</a>
+                <a href="hire.html">Hire <i data-lucide="chevron-down" class="nav-chevron"></i></a>
+                <a href="about.html">About</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="icon-link" href="hire.html" aria-label="Search services"><i data-lucide="search"></i></a>
+                <a class="button button-outline button-small" href="login.html">Log In</a>
+                <a class="button button-primary button-small" href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <p class="eyebrow eyebrow-light">LOCAL HELP <span>•</span> REAL PEOPLE <span>•</span> GREAT SERVICE</p>
+                <h1>Tasknet</h1>
+                <h2>Your skills. Your time.<br><span>Your earnings.</span></h2>
+                <p class="hero-description">Find trusted local help for everyday tasks. From car washing to pet care, gardening and more — discover services in your community.</p>
+                <div class="hero-buttons">
+                    <a class="button button-white" href="hire.html">Hire a Worker <i data-lucide="arrow-right"></i></a>
+                    <a class="button button-glass" href="signup.html?type=worker">Become a Worker <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="trust-float">
+                    <span class="trust-icon"><i data-lucide="shield-check"></i></span>
+                    <div><strong>Safety comes first</strong><small>Verified details · Secure bookings</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">POPULAR SERVICES</p>
+                    <h2>What do you need help with?</h2>
+                    <p>Browse popular services or find the right help for your task.</p>
+                </div>
+
+                <div class="service-grid">
+                    <a class="service-card" href="hire.html?service=car-washing">
+                        <span class="service-icon"><i data-lucide="car-front"></i></span>
+                        <div class="service-card-title"><h3>Car Washing</h3><i data-lucide="arrow-up-right"></i></div>
+                        <p>Keep your car looking its best.</p>
+                        <div class="service-photo photo-car" role="img" aria-label="A clean car being washed"></div>
+                    </a>
+                    <a class="service-card" href="hire.html?service=pet-care">
+                        <span class="service-icon"><i data-lucide="paw-print"></i></span>
+                        <div class="service-card-title"><h3>Pet Care</h3><i data-lucide="arrow-up-right"></i></div>
+                        <p>Dog walking, pet sitting and more.</p>
+                        <div class="service-photo photo-pet" role="img" aria-label="A happy dog outdoors"></div>
+                    </a>
+                    <a class="service-card" href="hire.html?service=gardening">
+                        <span class="service-icon"><i data-lucide="sprout"></i></span>
+                        <div class="service-card-title"><h3>Gardening</h3><i data-lucide="arrow-up-right"></i></div>
+                        <p>Lawn care, weeding and planting.</p>
+                        <div class="service-photo photo-garden" role="img" aria-label="Gardening tools and green plants"></div>
+                    </a>
+                    <a class="service-card" href="hire.html?service=cleaning">
+                        <span class="service-icon"><i data-lucide="house"></i></span>
+                        <div class="service-card-title"><h3>Cleaning</h3><i data-lucide="arrow-up-right"></i></div>
+                        <p>Help with tidy-ups and household tasks.</p>
+                        <div class="service-photo photo-clean" role="img" aria-label="Cleaning supplies in a bright room"></div>
+                    </a>
+                    <a class="service-card" href="hire.html?service=other">
+                        <span class="service-icon"><i data-lucide="wrench"></i></span>
+                        <div class="service-card-title"><h3>Other Services</h3><i data-lucide="arrow-up-right"></i></div>
+                        <p>Handy jobs, errands and more.</p>
+                        <div class="service-photo photo-tools" role="img" aria-label="A collection of hand tools"></div>
+                    </a>
+                </div>
+                <div class="center-action"><a class="text-link" href="hire.html">Explore all services <i data-lucide="arrow-right"></i></a></div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <div class="benefits-heading">
+                    <p class="eyebrow eyebrow-light">WHY CHOOSE TASKNET?</p>
+                    <h2>A better way to get things done</h2>
+                </div>
+                <div class="benefit-grid">
+                    <article class="benefit">
+                        <span class="benefit-icon"><i data-lucide="shield-check"></i></span>
+                        <div><h3>Trust & Transparency</h3><p>Clear profiles, booking details and customer reviews.</p></div>
+                    </article>
+                    <article class="benefit">
+                        <span class="benefit-icon"><i data-lucide="star"></i></span>
+                        <div><h3>Rating-Based Pricing</h3><p>Worker rates are linked to their average customer rating.</p></div>
+                    </article>
+                    <article class="benefit">
+                        <span class="benefit-icon"><i data-lucide="credit-card"></i></span>
+                        <div><h3>Online Bookings</h3><p>A simple place to arrange services and manage payments.</p></div>
+                    </article>
+                    <article class="benefit">
+                        <span class="benefit-icon"><i data-lucide="users"></i></span>
+                        <div><h3>Community First</h3><p>Helping people connect with local services and opportunities.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-section section-space">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">HOW IT WORKS</p>
+                    <h2>Simple steps. Great opportunities.</h2>
+                    <p>From finding a service to getting the job done.</p>
+                </div>
+                <div class="steps-grid">
+                    <article class="step"><span class="step-number">1</span><span class="step-icon"><i data-lucide="user-round"></i></span><h3>Create an account</h3><p>Sign up as a customer or apply to become a worker.</p></article>
+                    <span class="step-arrow"><i data-lucide="chevron-right"></i></span>
+                    <article class="step"><span class="step-number">2</span><span class="step-icon"><i data-lucide="search"></i></span><h3>Find a service</h3><p>Browse services, compare profiles and check reviews.</p></article>
+                    <span class="step-arrow"><i data-lucide="chevron-right"></i></span>
+                    <article class="step"><span class="step-number">3</span><span class="step-icon"><i data-lucide="calendar-check"></i></span><h3>Book and pay</h3><p>Choose a suitable time and review the total cost.</p></article>
+                    <span class="step-arrow"><i data-lucide="chevron-right"></i></span>
+                    <article class="step"><span class="step-number">4</span><span class="step-icon"><i data-lucide="star"></i></span><h3>Leave a review</h3><p>After the task, share feedback about your experience.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-preview">
+            <div class="container about-preview-inner">
+                <div class="about-image" role="img" aria-label="A young person working in a garden"></div>
+                <div class="about-copy">
+                    <p class="eyebrow">ABOUT TASKNET</p>
+                    <h2>Local help. Real opportunity.</h2>
+                    <p>TASKNET is designed to connect customers with people offering useful local services. We want booking to feel clear and straightforward, with transparent rates, reviews and safety measures built into the experience.</p>
+                    <a class="button button-primary" href="about.html">Learn More <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="mini-stats">
+                    <div><i data-lucide="handshake"></i><strong>Local</strong><span>Community connections</span></div>
+                    <div><i data-lucide="star"></i><strong>Rated</strong><span>Customer feedback</span></div>
+                    <div><i data-lucide="shield-check"></i><strong>Safety-first</strong><span>Designed with care</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <div class="footer-brand">
+                <a class="brand brand-footer" href="index.html"><span class="brand-mark">T</span><span>Tasknet</span></a>
+                <p>Your skills. Your time. Your earnings.</p>
+            </div>
+            <div class="footer-links">
+                <div><h3>Explore</h3><a href="index.html">Home</a><a href="hire.html">Hire a Worker</a><a href="about.html">About Us</a><a href="how-it-works.html">How It Works</a></div>
+                <div><h3>Account</h3><a href="login.html">Log In</a><a href="signup.html">Sign Up</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a></div>
+                <div><h3>Important</h3><a href="safety.html">Safety</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
+            </div>
+        </div>
+        <div class="footer-bottom"><div class="container"><span>© 2026 Tasknet. All rights reserved.</span><span>Built for local communities.</span></div></div>
+    </footer>
+
+    <script>
+        if (window.lucide) lucide.createIcons();
+        const menuToggle = document.getElementById("menuToggle");
+        const mainNav = document.getElementById("mainNav");
+        menuToggle.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("nav-open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+        });
+    </script>
+</body>
+</html>

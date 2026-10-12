@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | TaskNet</title>
+
+    <link rel="stylesheet" href="styles/services.css">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+
+<header class="contact-header">
+    <div class="contact-nav-container">
+        <a href="index.html" class="contact-logo">Task<span>Net</span></a>
+
+        <nav class="contact-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="hire.html">Hire</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="login.html" class="contact-login">Log in</a>
+            <a href="signup.html" class="contact-start">Get Started</a>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <span class="eyebrow">GET IN TOUCH</span>
+                <h1>We're here to <span>help.</span></h1>
+                <p>
+                    Have a question about TaskNet? Need help finding a task?
+                    We'd love to hear from you.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container contact-layout">
+
+                <div class="contact-info">
+                    <span class="eyebrow">CONTACT TASKNET</span>
+                    <h2>Let's talk.</h2>
+                    <p class="info-description">
+                        Send us a message using the form. We're working
+                        towards making TaskNet a helpful place for everyone.
+                    </p>
+
+                    <div class="info-card">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <h3>Email support</h3>
+                            <p>Use the contact form to send us your enquiry.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">💬</div>
+                        <div>
+                            <h3>General enquiries</h3>
+                            <p>Questions, suggestions or feedback about TaskNet.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">🛡️</div>
+                        <div>
+                            <h3>Safety concerns</h3>
+                            <p>Let us know if something on the platform concerns you.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-note">
+                        <strong>Please note:</strong>
+                        TaskNet's contact form is currently a design demo.
+                        Messages will not be sent until a backend is connected.
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <h2>Send us a message</h2>
+                    <p>Fill in the details below.</p>
+
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="general">General enquiry</option>
+                                <option value="account">Account question</option>
+                                <option value="task">Question about a task</option>
+                                <option value="safety">Safety concern</option>
+                                <option value="feedback">Feedback or suggestion</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="How can we help you?"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Send Message →
+                        </button>
+
+                        <p id="formMessage" class="form-message" role="status"></p>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">QUICK ANSWERS</span>
+                    <h2>Frequently asked questions</h2>
+                    <p>Here are a few things you might want to know.</p>
+                </div>
+
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary>What is TaskNet?</summary>
+                        <p>
+                            TaskNet is a marketplace concept designed to
+                            connect people who need tasks completed with
+                            people who can help.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How do I find a task?</summary>
+                        <p>
+                            Visit the Hire page to browse the sample tasks.
+                            Listings are currently demonstrations rather than
+                            confirmed real-world jobs.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I create an account?</summary>
+                        <p>
+                            You can explore the sign-up page, but account
+                            creation is not active yet because authentication
+                            has not been connected.
+                        </p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How do I report a safety concern?</summary>
+                        <p>
+                            Use the contact form to describe your concern once
+                            a working submission service is available. Until
+                            then, this demonstration cannot receive reports.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Task<span>Net</span></a>
+                <p>Connecting people. Getting tasks done.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="hire.html">Hire</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Log in</a>
+                <a href="signup.html">Sign up</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 TaskNet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
+
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            formMessage.textContent =
+                "The contact form isn't connected yet. Your message has not been sent.";
+            formMessage.classList.add("visible");
+        });
+    </script>
+
+</body>
+</html>

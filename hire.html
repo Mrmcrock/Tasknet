@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hire Someone | Tasknet</title>
+    <meta name="description" content="Find people offering car washing, pet care, gardening and other local services on Tasknet.">
+
+    <link rel="stylesheet" href="styles/hire.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="nav-wrap">
+
+            <a href="index.html" class="brand">
+                <span class="brand-mark">T</span>
+                Tasknet
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="hire.html" class="active">Hire</a>
+                <a href="payments.html">Payments</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="button button-outline">Log in</a>
+                <a href="signup.html" class="button button-primary">Sign up</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hire-hero">
+        <div class="container hire-hero-content">
+
+            <p class="eyebrow">YOUR NEXT TASK STARTS HERE</p>
+
+            <h1>Find help for your <span>everyday tasks.</span></h1>
+
+            <p class="description">
+                From sparkling car washes to reliable pet care,
+                discover people offering services in your local area.
+                Find the help you need with Tasknet.
+            </p>
+
+            <!-- SEARCH -->
+            <form class="search-panel" id="searchForm">
+
+                <div class="search-field">
+                    <div>
+                        <label for="searchService">WHAT DO YOU NEED?</label>
+                        <input
+                            type="text"
+                            id="searchService"
+                            placeholder="e.g. Car washing"
+                        >
+                    </div>
+                </div>
+
+                <div class="search-field">
+                    <div>
+                        <label for="searchLocation">YOUR AREA</label>
+                        <input
+                            type="text"
+                            id="searchLocation"
+                            placeholder="Town or postcode"
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="button button-primary">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <main class="hire-content">
+        <div class="container">
+
+            <div class="content-heading">
+                <div>
+                    <h2>Explore services</h2>
+                    <p>Choose a task and find the right person for the job.</p>
+                </div>
+
+                <select class="sort-select" id="sortServices" aria-label="Sort services">
+                    <option value="default">Recommended</option>
+                    <option value="low">Lowest hourly rate</option>
+                    <option value="high">Highest hourly rate</option>
+                </select>
+            </div>
+
+
+            <!-- CATEGORY FILTERS -->
+            <div class="category-filters">
+                <button class="category-filter active" data-category="all">
+                    All services
+                </button>
+
+                <button class="category-filter" data-category="car">
+                    Car washing
+                </button>
+
+                <button class="category-filter" data-category="pets">
+                    Pet care
+                </button>
+
+                <button class="category-filter" data-category="garden">
+                    Gardening
+                </button>
+
+                <button class="category-filter" data-category="clean">
+                    Cleaning
+                </button>
+
+                <button class="category-filter" data-category="errands">
+                    Errands
+                </button>
+
+                <button class="category-filter" data-category="other">
+                    Other tasks
+                </button>
+            </div>
+
+
+            <!-- SERVICE CARDS -->
+            <div class="services-grid" id="servicesGrid">
+
+                <article class="service-card" data-category="car" data-rate="5" data-name="Car washing">
+                    <div class="service-image car-wash"></div>
+
+                    <div class="service-info">
+                        <h3>Car Washing</h3>
+
+                        <p>
+                            Keep your car looking clean with help
+                            washing the exterior and windows.
+                        </p>
+
+                        <div class="service-bottom">
+                            <div class="rate">
+                                £5 <small>/ hour</small>
+                            </div>
+
+                            <a href="/workers?service=Car%20washing" class="button button-primary">
+                                Hire now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="service-card" data-category="pets" data-rate="6" data-name="Pet care">
+                    <div class="service-image pet-care"></div>
+
+                    <div class="service-info">
+                        <h3>Pet Care</h3>
+
+                        <p>
+                            Find help with suitable pet-care tasks,
+                            feeding and looking after animals.
+                        </p>
+
+                        <div class="service-bottom">
+                            <div class="rate">
+                                £6 <small>/ hour</small>
+                            </div>
+
+                            <a href="/workers?service=Pet%20care" class="button button-primary">
+                                Hire now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="service-card" data-category="garden" data-rate="7" data-name="Gardening">
+                    <div class="service-image gardening"></div>
+
+                    <div class="service-info">
+                        <h3>Gardening</h3>
+
+                        <p>
+                            Get help with light gardening,
+                            watering plants and tidying gardens.
+                        </p>
+
+                        <div class="service-bottom">
+                            <div class="rate">
+                                £7 <small>/ hour</small>
+                            </div>
+
+                            <a href="/workers?service=Gardening" class="button button-primary">
+                                Hire now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="service-card" data-category="clean" data-rate="6" data-name="Cleaning">
+                    <div class="service-image cleaning"></div>
+
+                    <div class="service-info">
+                        <h3>Cleaning</h3>
+
+                        <p>
+                            Find help with appropriate household
+                            tidying and simple cleaning tasks.
+                        </p>
+
+                        <div class="service-bottom">
+                            <div class="rate">
+                                £6 <small>/ hour</small>
+                            </div>
+
+                            <a href="/workers?service=Cleaning" class="button button-primary">
+                                Hire now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="service-card" data-category="errands" data-rate="5" data-name="Errands">
+                    <div class="service-image errands"></div>
+
+                    <div class="service-info">
+                        <h3>Simple Errands</h3>
+
+                        <p>
+                            Get help with suitable local errands
+                            and everyday tasks.
+                        </p>
+
+                        <div class="service-bottom">
+                            <div class="rate">
+                                £5 <small>/ hour</small>
+                            </div>
+
+                            <a href="/workers?service=Errands" class="button button-primary">
+                                Hire now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="service-card" data-category="other" data-rate="8" data-name="Other tasks">
+                    <div class="service-image other-jobs"></div>
+
+                    <div class="service-info">
+                        <h3>Other Tasks</h3>
+
+                        <p>
+                            Find help with other suitable jobs
+                            offered by local service providers.
+                        </p>
+
+                        <div class="service-bottom">
+                            <div class="rate">
+                                £8 <small>/ hour</small>
+                            </div>
+
+                            <a href="/workers?service=Other%20tasks" class="button button-primary">
+                                Hire now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <!-- NO RESULTS -->
+            <p id="noResults" hidden>
+                No services match your search. Try another keyword or category.
+            </p>
+
+
+            <!-- SAFETY NOTICE -->
+            <aside class="safety-banner">
+
+                <div class="safety-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </div>
+
+                <div>
+                    <h3>Safety comes first</h3>
+
+                    <p>
+                        Check provider profiles and ratings before booking.
+                        Age eligibility, appropriate supervision, safeguarding
+                        and applicable employment rules must be checked before
+                        any booking is accepted.
+                    </p>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-main">
+
+            <div class="footer-brand">
+                <h2>Tastnest</h2>
+
+                <p>Helping your everyday tasks get done.</p>
+            </div>
+
+            <div class="footer-links">
+
+                <div>
+                    <h3>Explore</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About us</a>
+                    <a href="services.html">Services</a>
+                    <a href="hire.html">Hire</a>
+                </div>
+
+                <div>
+                    <h3>Account</h3>
+                    <a href="login.html">Log in</a>
+                    <a href="signup.html">Create account</a>
+                </div>
+
+                <div>
+                    <h3>Help</h3>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <span>© 2026 Tasknet. All rights reserved.</span>
+                <span>Built to make everyday tasks easier.</span>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- SEARCH, FILTER AND SORT -->
+    <script>
+        const searchForm = document.getElementById("searchForm");
+        const searchService = document.getElementById("searchService");
+        const searchLocation = document.getElementById("searchLocation");
+        const categoryButtons = document.querySelectorAll(".category-filter");
+        const servicesGrid = document.getElementById("servicesGrid");
+        const noResults = document.getElementById("noResults");
+        const sortServices = document.getElementById("sortServices");
+
+        const serviceCards = Array.from(
+            document.querySelectorAll(".service-card")
+        );
+
+        let activeCategory = "all";
+
+        function updateServices() {
+            const keyword = searchService.value.trim().toLowerCase();
+            const location = searchLocation.value.trim().toLowerCase();
+
+            let visibleCount = 0;
+
+            serviceCards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const category = card.dataset.category;
+                const text = card.textContent.toLowerCase();
+
+                const matchesCategory =
+                    activeCategory === "all" ||
+                    category === activeCategory;
+
+                const matchesKeyword =
+                    !keyword ||
+                    name.includes(keyword) ||
+                    text.includes(keyword);
+
+                /*
+                 * This demo has no provider database or location data.
+                 * Do not pretend a location search verifies local providers.
+                 */
+                const matchesLocation = !location;
+
+                const visible =
+                    matchesCategory &&
+                    matchesKeyword &&
+                    matchesLocation;
+
+                card.hidden = !visible;
+
+                if (visible) {
+                    visibleCount++;
+                }
+            });
+
+            noResults.hidden = visibleCount > 0;
+        }
+
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                categoryButtons.forEach(item =>
+                    item.classList.remove("active")
+                );
+
+                button.classList.add("active");
+                activeCategory = button.dataset.category;
+
+                updateServices();
+            });
+        });
+
+        searchForm.addEventListener("submit", event => {
+            event.preventDefault();
+
+            if (searchLocation.value.trim()) {
+                alert(
+                    "Location-based provider search is not connected yet. " +
+                    "This demo currently filters service categories only."
+                );
+                searchLocation.value = "";
+            }
+
+            updateServices();
+
+            document.querySelector(".hire-content").scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+
+        sortServices.addEventListener("change", () => {
+            const sort = sortServices.value;
+
+            const sortedCards = [...serviceCards];
+
+            if (sort === "low") {
+                sortedCards.sort(
+                    (a, b) => Number(a.dataset.rate) - Number(b.dataset.rate)
+                );
+            } else if (sort === "high") {
+                sortedCards.sort(
+                    (a, b) => Number(b.dataset.rate) - Number(a.dataset.rate)
+                );
+            }
+
+            sortedCards.forEach(card => servicesGrid.appendChild(card));
+        });
+
+        updateServices();
+    </script>
+
+</body>
+</html>

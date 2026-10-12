@@ -1,0 +1,30 @@
+TASKNET PAYMENTS — TEST-MODE STARTER
+
+This update keeps your current Flask login/profile/age-gate setup and adds a payments page plus a Stripe Connect Checkout route. TaskNet's platform fee is 10% of the server-defined task price; the remaining 90% is routed to the configured connected worker account, before any provider fees or adjustments.
+
+IMPORTANT: This is not live-ready. Do not accept real payments yet. You need an adult/guardian and appropriate provider accounts for a real business, plus legal/business and safety checks. Never share API secrets in chat or put them in HTML/GitHub.
+
+1. Back up your existing TaskNet folder.
+2. Copy the files in this ZIP over your project, keeping your styles/ and other assets folders.
+3. Install dependencies:
+   py -m pip install flask werkzeug stripe
+4. Configure Stripe TEST keys in your terminal before running the app (PowerShell):
+   $env:STRIPE_SECRET_KEY="sk_test_..."
+   $env:STRIPE_CONNECTED_ACCOUNT_ID="acct_..."
+   $env:TASKNET_SECRET_KEY="a-long-random-secret"
+   py app.py
+   Use a Stripe Connect test account ID for the worker. Do not use live keys yet.
+5. Visit http://127.0.0.1:5000/payments.html and sign in first. Test only with Stripe's published test card numbers in test mode.
+6. Do not treat the return URL as proof of payment. Before launch, add Stripe webhook signature verification and persist verified payment/task status in the database, plus worker onboarding, refunds/disputes, logs, and reconciliation.
+
+PAYPAL
+PayPal marketplace/platform split payments are not switched on here. PayPal's Complete Payments Platform is for approved partners; TaskNet needs provider approval and seller onboarding before platform commissions/payouts can be implemented. Documentation: https://developer.paypal.com/platforms/get-started
+
+STRIPE CONNECT
+Stripe Connect supports platform fees and routing funds to connected accounts. Documentation: https://stripe.com/gb/connect
+
+LIMITATIONS IN THIS STARTER
+- Sample task prices are hard-coded in app.py; replace them with real task records and validated worker assignment before launch.
+- One connected account ID is configured by environment variable for this prototype, not per worker.
+- The success route is informational only; payment verification via signed webhooks is mandatory before a task is marked paid.
+- Do not deploy Flask's debug server to production. Configure HTTPS, a persistent secret key, secure database backups, privacy notices, terms, and appropriate adult/business oversight.

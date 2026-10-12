@@ -1,0 +1,258 @@
+/* SERVICES HERO */
+
+.services-hero {
+    background: linear-gradient(135deg, #eef5ff, #ffffff);
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.services-hero .container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.services-hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #172b4d;
+    margin: 0 0 20px;
+}
+
+.services-hero h1 span {
+    color: #2563eb;
+}
+
+.services-hero p {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+/* SERVICES SECTION */
+
+.services-section {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.services-section .container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    color: #172b4d;
+    margin: 0 0 15px;
+}
+
+.section-heading p {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    background: #eef5ff;
+    border-radius: 12px;
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.service-card h3 {
+    color: #172b4d;
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.service-card p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 0 22px;
+}
+
+.service-card a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.service-card a span {
+    margin-left: 5px;
+}
+
+.service-card a:hover {
+    color: #1d4ed8;
+}
+
+/* CALL TO ACTION */
+
+.services-cta {
+    background: #172b4d;
+    color: #ffffff;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.services-cta .container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.services-cta h2 {
+    font-size: 34px;
+    margin: 0 0 15px;
+}
+
+.services-cta p {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #0f1f38;
+    color: #cbd5e1;
+}
+
+.footer-content {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #60a5fa;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .services-hero h1 {
+        font-size: 40px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 550px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-hero {
+        padding: 65px 20px;
+    }
+
+    .services-hero h1 {
+        font-size: 34px;
+    }
+
+    .section-heading h2,
+    .services-cta h2 {
+        font-size: 28px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}

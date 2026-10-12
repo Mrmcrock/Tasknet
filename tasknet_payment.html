@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12372f">
+  <title>Payments | TaskNet</title>
+  <style>
+    :root {
+      --ink: #172b27;
+      --muted: #64736e;
+      --green: #176b52;
+      --green-dark: #10513e;
+      --green-soft: #e8f5ef;
+      --line: #dce7e2;
+      --page: #f4f7f5;
+      --white: #fff;
+      --amber-bg: #fff8e8;
+      --amber-line: #f1d49b;
+      --amber-ink: #765000;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .site-header {
+      color: #fff;
+      background: #12372f;
+      border-bottom: 4px solid #a9d7bd;
+    }
+    .header-inner {
+      width: min(1100px, calc(100% - 40px));
+      min-height: 76px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.55rem;
+      font-weight: 850;
+      letter-spacing: -.06em;
+    }
+    .brand span { color: #a9d7bd; }
+    .back-link {
+      color: #e1eee8;
+      font-size: .92rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+    main {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 44px 0 64px;
+    }
+    .intro { max-width: 720px; margin-bottom: 26px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--green);
+      background: var(--green-soft);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 14px 0 9px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -.055em;
+    }
+    .intro p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin: 26px 0 32px;
+      padding: 17px 19px;
+      border: 1px solid var(--amber-line);
+      border-radius: 14px;
+      background: var(--amber-bg);
+      color: var(--amber-ink);
+    }
+    .notice-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 30px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #ffedbd;
+      font-weight: 900;
+    }
+    .notice strong { display: block; margin-bottom: 3px; }
+    .notice p { margin: 0; font-size: .9rem; }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 15px;
+    }
+    h2 { margin: 0; font-size: 1.35rem; letter-spacing: -.025em; }
+    .section-heading p { margin: 3px 0 0; color: var(--muted); font-size: .9rem; }
+    .task-list { display: grid; gap: 15px; }
+    .task-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: 0 8px 25px rgb(18 55 47 / 5%);
+    }
+    .task-name { margin: 0 0 8px; font-size: 1.13rem; font-weight: 780; }
+    .price-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 13px; }
+    .price { font-size: 1.8rem; line-height: 1.1; font-weight: 850; letter-spacing: -.055em; }
+    .price-label { color: var(--muted); font-size: .88rem; }
+    .fee-note {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 8px;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .fee-note::before {
+      content: "i";
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      border: 1px solid #aebdb6;
+      border-radius: 50%;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 800;
+    }
+    .checkout-form { margin: 0; }
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 17px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--green);
+      color: #fff;
+      font: inherit;
+      font-weight: 750;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .button:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .button:focus-visible, a:focus-visible { outline: 3px solid #86c8a7; outline-offset: 3px; }
+    .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 22px; }
+    .info-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+    }
+    .info-card h2 { margin-bottom: 8px; font-size: 1.05rem; }
+    .info-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .provider-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: #f0f4f2;
+      color: #53645d;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .footer { padding-top: 28px; color: var(--muted); text-align: center; font-size: .82rem; }
+    @media (max-width: 700px) {
+      .header-inner, main { width: min(100% - 30px, 1100px); }
+      .header-inner { min-height: 68px; }
+      main { padding-top: 30px; }
+      .task-card { grid-template-columns: 1fr; gap: 18px; padding: 19px; }
+      .checkout-form, .button { width: 100%; }
+      .details-grid { grid-template-columns: 1fr; }
+      .section-heading { align-items: start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="TaskNet home">Task<span>Net</span></a>
+      <a class="back-link" href="hire.html">← Back to hiring</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <span class="eyebrow">TaskNet checkout</span>
+      <h1>Choose your task</h1>
+      <p>Review the price before continuing to checkout. Your payment is not taken from this page itself.</p>
+    </section>
+
+    <aside class="notice" aria-label="Payment setup notice">
+      <span class="notice-icon" aria-hidden="true">!</span>
+      <div>
+        <strong>Payment setup notice</strong>
+        <p>Only continue if the payment provider is configured for your TaskNet environment. Never enter card details directly into this page.</p>
+      </div>
+    </aside>
+
+    <section aria-labelledby="task-list-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="task-list-title">Available tasks</h2>
+          <p>Select a task to continue.</p>
+        </div>
+      </div>
+
+      <div class="task-list">
+        {% for key, task in tasks.items() %}
+        <article class="task-card">
+          <div>
+            <h3 class="task-name">{{ task.name }}</h3>
+            <div class="price-line">
+              <span class="price">£{{ '%.2f'|format(task.amount_pence / 100) }}</span>
+              <span class="price-label">booking total</span>
+            </div>
+            <div class="fee-note">
+              TaskNet's share is calculated after eligible business expenses are deducted. The final settlement amount is not calculated on this page.
+            </div>
+          </div>
+          <form class="checkout-form" method="post" action="/payments/stripe/checkout">
+            <input type="hidden" name="task_id" value="{{ key }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf }}">
+            <button class="button" type="submit">Continue to Stripe <span aria-hidden="true">→</span></button>
+          </form>
+        </article>
+        {% else %}
+        <p>No tasks are available for checkout right now. Please return to the hiring page and try again.</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="details-grid" aria-label="Payment information">
+      <article class="info-card">
+        <span class="provider-label">Card payments</span>
+        <h2>Stripe checkout</h2>
+        <p>The button sends the selected task to TaskNet's existing Stripe checkout route. Stripe must be correctly configured on the server before real payments can be accepted.</p>
+      </article>
+      <article class="info-card">
+        <span class="provider-label">Coming after setup</span>
+        <h2>PayPal</h2>
+        <p>PayPal is not connected by this page. It needs its own supported integration before customers can use it for payments or marketplace payouts.</p>
+      </article>
+    </section>
+
+    <footer class="footer">TaskNet · Review the booking total before continuing.</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | TaskNet</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">Task<span>Net</span></a>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="hire.html">Hire</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="signup.html" class="header-signup">Create account</a>
+    </header>
+
+    <!-- Login Section -->
+    <main class="login-section">
+
+        <div class="login-decoration decoration-one"></div>
+        <div class="login-decoration decoration-two"></div>
+
+        <div class="login-container">
+
+            <!-- Left Side -->
+            <section class="login-welcome">
+                <span class="eyebrow">WELCOME TO TASKNET</span>
+
+                <h1>
+                    Get started with
+                    <span>TaskNet.</span>
+                </h1>
+
+                <p>
+                    Create your account to discover services, manage your
+                    tasks and connect with people.
+                </p>
+
+                <div class="welcome-features">
+
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <h3>Everything in one place</h3>
+                            <p>Keep your tasks organised.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">↗</div>
+                        <div>
+                            <h3>Find the right help</h3>
+                            <p>Explore services that suit your needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">◎</div>
+                        <div>
+                            <h3>Your account, your way</h3>
+                            <p>Access your account when you need it.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Right Side: Login Form -->
+            <section class="login-card">
+
+                <div class="form-heading">
+                    <div class="form-logo">T</div>
+
+                    <h2>Create your account</h2>
+
+                    <p>Join TaskNet in just a few steps.</p>
+                </div>
+
+                <form id="signupForm" action="/signup.html" method="post">
+                    <input type="hidden" name="csrf_token" value="__TASKNET_CSRF_TOKEN__">
+
+                    <div class="form-group">
+                        <label for="name">Full name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="80" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <div class="password-label">
+                            <label for="password">Password</label>
+
+                            <span></span>
+                        </div>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a password (12+ characters)"
+                                autocomplete="new-password"
+                                minlength="12"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="toggle-password"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Enter your password again" autocomplete="new-password" minlength="12" required>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        Create account <span>→</span>
+                    </button>
+
+                    <p id="formMessage" class="form-message" role="status"></p>
+
+                </form>
+
+                <div class="form-divider">
+                    <span>ALREADY ON TASKNET?</span>
+                </div>
+
+                <p class="signup-prompt">
+                    Already have an account?
+                    <a href="login.html">Log in</a>
+                </p>
+
+                <p class="terms">
+                    By continuing, you agree to use TaskNet responsibly
+                    and follow its applicable terms and privacy policy.
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="index.html" class="logo footer-logo">
+            Task<span>Net</span>
+        </a>
+
+        <p>Connecting people. Simplifying tasks.</p>
+
+        <span class="copyright">
+            &copy; 2026 TaskNet. All rights reserved.
+        </span>
+    </footer>
+
+    <script>
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+        const signupForm = document.getElementById("signupForm");
+        const formMessage = document.getElementById("formMessage");
+        const confirmPassword = document.getElementById("confirm_password");
+
+        togglePassword.addEventListener("click", function () {
+            const isHidden = passwordInput.type === "password";
+            passwordInput.type = isHidden ? "text" : "password";
+            confirmPassword.type = isHidden ? "text" : "password";
+            togglePassword.textContent = isHidden ? "Hide" : "Show";
+            togglePassword.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        const errorMessages = {
+            name: "Please enter a name between 2 and 80 characters.",
+            email: "Please enter a valid email address.",
+            password: "Your password must be at least 12 characters long.",
+            match: "The passwords don't match. Please try again.",
+            exists: "An account with that email already exists. Try logging in instead."
+        };
+        if (params.has("error")) {
+            formMessage.textContent = errorMessages[params.get("error")] || "We couldn't create your account. Please try again.";
+            formMessage.className = "form-message info";
+        }
+
+        signupForm.addEventListener("submit", function (event) {
+            if (passwordInput.value !== confirmPassword.value) {
+                event.preventDefault();
+                formMessage.textContent = "The passwords don't match. Please try again.";
+                formMessage.className = "form-message info";
+                confirmPassword.focus();
+                return;
+            }
+            formMessage.textContent = "Creating your account...";
+            formMessage.className = "form-message info";
+        });
+    </script>
+
+</body>
+</html>

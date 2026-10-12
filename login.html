@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Log In | TaskNet</title>
+
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">Task<span>Net</span></a>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="hire.html">Hire</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <a href="signup.html" class="header-signup">Create account</a>
+    </header>
+
+    <!-- Login Section -->
+    <main class="login-section">
+
+        <div class="login-decoration decoration-one"></div>
+        <div class="login-decoration decoration-two"></div>
+
+        <div class="login-container">
+
+            <!-- Left Side -->
+            <section class="login-welcome">
+                <span class="eyebrow">WELCOME TO TASKNET</span>
+
+                <h1>
+                    Good to have
+                    <span>you back.</span>
+                </h1>
+
+                <p>
+                    Log in to continue discovering services, managing your
+                    tasks and connecting with people.
+                </p>
+
+                <div class="welcome-features">
+
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <h3>Everything in one place</h3>
+                            <p>Keep your tasks organised.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">↗</div>
+                        <div>
+                            <h3>Find the right help</h3>
+                            <p>Explore services that suit your needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">◎</div>
+                        <div>
+                            <h3>Your account, your way</h3>
+                            <p>Access your account when you need it.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Right Side: Login Form -->
+            <section class="login-card">
+
+                <div class="form-heading">
+                    <div class="form-logo">T</div>
+
+                    <h2>Log in to TaskNet</h2>
+
+                    <p>Enter your details to continue.</p>
+                </div>
+
+                <form id="loginForm" action="/login.html" method="post">
+                    <input type="hidden" name="csrf_token" value="__TASKNET_CSRF_TOKEN__">
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <div class="password-label">
+                            <label for="password">Password</label>
+
+                            <a href="#" id="forgotPassword">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="toggle-password"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-option">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        Log in <span>→</span>
+                    </button>
+
+                    <p id="formMessage" class="form-message" role="status"></p>
+
+                </form>
+
+                <div class="form-divider">
+                    <span>NEW TO TASKNET?</span>
+                </div>
+
+                <p class="signup-prompt">
+                    Don't have an account?
+                    <a href="signup.html">Create one</a>
+                </p>
+
+                <p class="terms">
+                    By continuing, you agree to use TaskNet responsibly
+                    and follow its applicable terms and privacy policy.
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="index.html" class="logo footer-logo">
+            Task<span>Net</span>
+        </a>
+
+        <p>Connecting people. Simplifying tasks.</p>
+
+        <span class="copyright">
+            &copy; 2026 TaskNet. All rights reserved.
+        </span>
+    </footer>
+
+    <script>
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+        const loginForm = document.getElementById("loginForm");
+        const formMessage = document.getElementById("formMessage");
+
+        togglePassword.addEventListener("click", function () {
+            const isHidden = passwordInput.type === "password";
+
+            passwordInput.type = isHidden ? "text" : "password";
+            togglePassword.textContent = isHidden ? "Hide" : "Show";
+
+            togglePassword.setAttribute(
+                "aria-label",
+                isHidden ? "Hide password" : "Show password"
+            );
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        const errorMessages = {
+            invalid: "The email address or password is incorrect. Please try again."
+        };
+        if (params.has("error")) {
+            formMessage.textContent = errorMessages[params.get("error")] || "We couldn't log you in. Please try again.";
+            formMessage.className = "form-message info";
+        }
+
+        loginForm.addEventListener("submit", function () {
+            formMessage.textContent = "Checking your details...";
+            formMessage.className = "form-message info";
+        });
+
+        document.getElementById("forgotPassword").addEventListener(
+            "click",
+            function (event) {
+                event.preventDefault();
+
+                formMessage.textContent =
+                    "Password recovery is not set up yet.";
+
+                formMessage.className = "form-message info";
+            }
+        );
+    </script>
+
+</body>
+</html>
